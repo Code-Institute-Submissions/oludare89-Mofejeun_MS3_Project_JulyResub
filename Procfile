@@ -1,1 +1,1 @@
- web: gunicorn mofejeun-app.wsgi:application
+ web: gunicorn app:app
