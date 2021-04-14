@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Judson', sans-serif;
+    background-color: #ffd9b3;
+}
+
+footer {
+    background-color: #e6ad73;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    color: white;
+}
+
+.nav-wrapper {
+    background-color: #e6ad73;
+}
