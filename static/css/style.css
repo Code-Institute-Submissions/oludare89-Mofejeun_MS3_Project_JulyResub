@@ -1,9 +1,24 @@
+/* Global styles */
+
 @import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Judson', sans-serif;
     background-color: #ffd9b3;
 }
+
+/* Navigation bar */
+
+.nav-wrapper {
+    background-color: #e6ad73;
+}
+
+/* Footer */
 
 footer {
     background-color: #e6ad73;
@@ -15,6 +30,3 @@ footer {
     color: white;
 }
 
-.nav-wrapper {
-    background-color: #e6ad73;
-}
