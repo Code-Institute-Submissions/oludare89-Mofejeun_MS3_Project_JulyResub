@@ -1,45 +1,61 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ![mofejeun](static/images/mofejeun_logo.jpg)Mofejeun
 
-Welcome oludare89,
+Plum is a recipe sharing website designed to help users find recipes and share their own with others.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+![Multi device mockup](#)
 
-## Gitpod Reminders
+[See live site.](https://mofejeun-app.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents
 
-`python3 -m http.server`
+- **[User Experience](#User-Experience)**
+  - [Project Goals](#Project-Goals)
+    - [User Stories](#User-Stories)
+- **[Design](#Design)**
+  - [Fonts](#Fonts)
+  - [Colours](#Colours)
+  - [Layout](#Layout)
 
-A blue button should appear to click: *Make Public*,
+## User Experience
 
-Another blue button should appear to click: *Open Browser*.
+### Project Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The project goal is to produce a recipe sharing website that allows users to share recipes.
 
-A blue button should appear to click: *Make Public*,
+### User Stories
 
-Another blue button should appear to click: *Open Browser*.
+- (US001) - As a site user I want to able to browse through recipes and see ratings given by other users.
+- (US002) - As a site user I want to search recipes by name so that I can find specific recipes.
+- (US003) - As a site user I want to search and filter recipes by African region to explore new recipes from specific regions.
+- (US004) - As a site user I want to be able to select recipes as favourites so that I can quickly access them when revisiting the site at a later date.
+- (US005) - As a site user I want to upload my recipes to share with other site users.
+- (US006) - As a site user I want to be able to see feedback on my recipes so I can see how much other users liked the recipe.
+- (US007) - As a site user I want to be able to edit the reciples I upload to the website to add improvements or correct mistakes.
+- (US008) - As a new user I want to be able to register on the site in order to be able to upload my recipes.
+- (US009) - As a registered user I want to be able to log in to access the recipes I've uploaded and view any recipes I've added as favourites.
+- (US010) - As an admin user I want to be able to edit content to ensure all content uploaded on the site doesn't contain any offensive material.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+##  Design
 
-## Updates Since The Instructional Video
+### Fonts
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The font used throughout the site is [Judson](https://fonts.google.com/specimen/Judson). This was used as it's a clear and stylish font and was obtained from Google Fonts.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Colours
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Sandy Beach was chosen as it's associated with hot and foreign countries of which the African continent has many such nations. Corvette was used as it's a complementary colour to Sandy Beach.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### ![pallet](https://user-images.githubusercontent.com/46917417/114956465-d3a34200-9e56-11eb-8820-60b325ba3eac.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Sandy Beach (#ffd9b3) - Main site brand colour
+- Corvette (#e6ad73) - Complementary colour
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Layout
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The site is designed to work and be usable on various devices from mobile phones to desktop computers with a responsive layout. The minimum targeted screen width is 320 pixels wide and a maximum tested width of 2560 pixels.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+All initial wireframes are available below:
 
---------
-
-Happy coding!
+- [Home Page](https://user-images.githubusercontent.com/46917417/114956660-414f6e00-9e57-11eb-8026-04371aa5ae42.png)
+- [Recipe Page](https://user-images.githubusercontent.com/46917417/114956704-51ffe400-9e57-11eb-9968-682fd258a147.png)
+- [Search Page](https://user-images.githubusercontent.com/46917417/114956743-67750e00-9e57-11eb-8f8f-519f1dc90a5e.png)
