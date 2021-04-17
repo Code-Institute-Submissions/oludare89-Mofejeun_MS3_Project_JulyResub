@@ -29,6 +29,11 @@ body {
     font-size: 10px;
 }
 
+.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
 /* Footer */
 
 footer {
