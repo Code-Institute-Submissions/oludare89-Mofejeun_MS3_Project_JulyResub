@@ -18,6 +18,17 @@ body {
     background-color: #e6ad73;
 }
 
+.sidenav {
+    background-color: #e6ad73;
+}
+
+/* Flash messages */
+
+.flashes {
+    color: white;
+    font-size: 10px;
+}
+
 /* Footer */
 
 footer {

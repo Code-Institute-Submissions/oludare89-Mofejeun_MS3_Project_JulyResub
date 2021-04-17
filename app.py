@@ -46,7 +46,7 @@ def register():
 
         #put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Registration Successful!", category="info")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
@@ -66,15 +66,15 @@ def login():
                     flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
-                        "profile", username=session["user"]))
+                        "profile", username=session["user"]), category="info")
             else:
                 #invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password", category="warning")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password", category="warning")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -95,7 +95,7 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # remove user from session cookies
-    flash("You have been logged out")
+    flash("User {user} Logged out".format(user=session["user"]), category="info")
     session.pop("user")
     return redirect(url_for("login"))
 
