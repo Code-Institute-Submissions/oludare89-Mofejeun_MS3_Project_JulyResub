@@ -10,6 +10,7 @@
 body {
     font-family: 'Judson', sans-serif;
     background-color: #ffd9b3;
+    color: #fff;
 }
 
 /* Navigation bar */
@@ -20,13 +21,17 @@ body {
 
 .sidenav {
     background-color: #e6ad73;
-    color: white;
+}
+
+/* Home Page */
+
+.card {
+    background-color: #e6ad73;
 }
 
 /* Flash messages */
 
 .flashes {
-    color: white;
     font-size: 10px;
 }
 
@@ -44,6 +49,5 @@ footer {
     position:fixed;
     bottom:0;
     width:100%;
-    color: white;
 }
 
