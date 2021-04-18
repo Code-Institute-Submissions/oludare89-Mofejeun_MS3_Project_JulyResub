@@ -11,6 +11,9 @@ body {
     font-family: 'Judson', sans-serif;
     background-color: #ffd9b3;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Navigation bar */
@@ -25,8 +28,20 @@ body {
 
 /* Home Page */
 
+.card .card-content {
+  padding: 10px;
+}
+
 .card {
     background-color: #e6ad73;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-image {
+    width: 80%;
+    height: 80%;
 }
 
 /* Flash messages */
