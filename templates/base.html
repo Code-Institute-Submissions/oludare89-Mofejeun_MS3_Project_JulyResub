@@ -16,13 +16,13 @@
         <!-- top navbar -->
         <nav class="nav-extended">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo">
+                <a href="{{ url_for('home') }}" class="brand-logo">
                     <i class="mofejeun-logo"></i>
                     Mofejeun
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger left"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="#">Search</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -40,7 +40,7 @@
         <!-- mobile sidenavbar -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align">Mofejeun</h4></li>
-            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="#">Search</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -62,8 +62,8 @@
                 {% for message in messages %}
                     <div class="row flashes">
                         <h4 class="deep-orange darken-3 center-align">{{ message }}</h4>
-                        <i class="material-icons medium" id="flash-close">close</i><br>
                     </div>
+                    <i class="material-icons" id="flash-close">close</i>
                 {% endfor %}
             {% endif %}
         {% endwith %}
