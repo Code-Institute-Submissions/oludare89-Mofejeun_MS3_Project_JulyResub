@@ -30,6 +30,13 @@ body {
     color: #fff;
 }
 
+.user-dropdown {
+  background-color: #ffd9b3;
+}
+ul.user-dropdown li > a {
+  color: #fff;
+}
+
 /* Home Page */
 
 .card .card-content {

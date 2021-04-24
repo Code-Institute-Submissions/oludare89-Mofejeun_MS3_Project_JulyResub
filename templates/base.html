@@ -24,11 +24,14 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="#">Search</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    {% if session.user %}  
                         <li><a href="#">Add Recipe</a></li>
-                        <li><a href="#">Manage Regions</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        <li>
+                            <a class="dropdown-trigger" href="#" data-target="user-dropdown">
+                                {{ session.user }}
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -37,16 +40,34 @@
             </div>
         </nav>
 
+        <ul id="user-dropdown" class="user-dropdown dropdown-content">
+            <li><a href="{{ url_for('profile', username=session.user) }}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        </ul>
+
         <!-- mobile sidenavbar -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align">Mofejeun</h4></li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="#">Search</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="#">Add Recipe</a></li>
-                <li><a href="#">Manage Regions</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li>
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header">
+                                    {{ session.user }}
+                                    <i class="material-icons right">arrow_drop_down</i>
+                                </div>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="{{ url_for('profile', username=session.user) }}">Profile</a></li>
+                                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
