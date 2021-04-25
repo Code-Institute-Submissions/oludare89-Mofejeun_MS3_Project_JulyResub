@@ -16,6 +16,12 @@ body {
     min-height: 100vh;
 }
 
+main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-flow: column nowrap;
+}
+
 /* Navigation bar */
 
 .nav-wrapper {
@@ -51,32 +57,11 @@ ul.user-dropdown li > a {
     align-items: center;
 }
 
-.card-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-}
-
-.card-image a img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vh;
-    height: 100vh;
-}
-
-.card-content {
-    font-size: 10px;
-}
-
 /* Flash messages */
 
 .flashes {
-    font-size: 10px;
+    border-radius: 5px;
+    margin: 0;
 }
 
 .hide {
