@@ -25,7 +25,7 @@ mongo = PyMongo(app)
 def home():
 
     #pagination
-    per_page = 1
+    per_page = 2
     page = request.args.get('page')
 
     if page and page.isdigit():
