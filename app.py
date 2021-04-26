@@ -23,7 +23,18 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    recipes = mongo.db.recipes.find()
+
+    #pagination
+    per_page = 1
+    page = request.args.get('page')
+
+    if page and page.isdigit():
+        page = int(page)
+    else:
+        page = 1
+
+    recipes = mongo.db.recipes.find().skip(page-1).limit(per_page)
+
     return render_template("home.html", recipes=recipes)
 
 
