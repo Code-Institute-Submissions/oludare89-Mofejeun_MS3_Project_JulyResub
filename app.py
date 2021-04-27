@@ -40,7 +40,6 @@ def home():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    print('query')
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("home.html", recipes=recipes)
 
@@ -105,7 +104,9 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        recipes = list(mongo.db.recipes.find({"author" : username}))
+
+        return render_template("profile.html", username=username, recipes=recipes)
     
     return redirect(url_for("login"))
 
