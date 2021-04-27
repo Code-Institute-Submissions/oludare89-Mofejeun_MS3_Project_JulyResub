@@ -65,6 +65,13 @@ ul.user-dropdown li > a {
     text-align: center;
 }
 
+.card-panel {
+    background-color: #e6ad73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Flash messages */
 
 .flashes {
