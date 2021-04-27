@@ -23,8 +23,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-
-    #pagination
+    # pagination
     per_page = 2
     page = request.args.get('page')
 
@@ -33,7 +32,7 @@ def home():
     else:
         page = 1
 
-    recipes = mongo.db.recipes.find().skip(page-1).limit(per_page)
+    recipes = list(mongo.db.recipes.find().skip(page-1).limit(per_page))
 
     return render_template("home.html", recipes=recipes)
 
@@ -41,6 +40,7 @@ def home():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
+    print('query')
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("home.html", recipes=recipes)
 
