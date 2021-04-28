@@ -32,7 +32,7 @@ def home():
     else:
         page = 1
 
-    recipes = list(mongo.db.recipes.find().skip(page - (1 * per_page)).limit(per_page))
+    recipes = list(mongo.db.recipes.find().skip(page - 1).limit(per_page))
 
     return render_template("home.html", recipes=recipes)
 
