@@ -19,14 +19,17 @@
         </form>
     </div>
 
+    
     {% if recipes|length > 0 %}
     <ul class="pagination">
-        <li class="{% if page = 1 %} disabled {% endif %}"><a href="./?page={{ page - 1 }}"><i class="material-icons">chevron_left</i></a></li>
-        {% for page in page.iter_page() %}
-            <li class="{% if page = page.p %} active {% endif %}"><a href="./?page={{ page }}">{{ page }}</a></li>
+        <li class="{% if page == 1 %}  disabled {% endif %}"><a href="./?page={{ page - 1 }}"><i class="material-icons">chevron_left</i></a></li>
+        {% for page in page.iter() %}
+            <li class="{% if page == page.page %} active {% endif %}"><a href="./?page={{ page }}">{{ page }}</a></li>
         {% endfor %}
-        <li class="{% if page = 1 %} disabled {% endif %}"><a href="./?page={{ page + 1 }}"><i class="material-icons">chevron_right</i></a></li>
+        <li class="{% if page == 1 %} disabled {% endif %}"><a href="./?page={{ page + 1 }}"><i class="material-icons">chevron_right</i></a></li>
     </ul>
+    
+
     <div class="row">
         {% for recipe in recipes %}
         

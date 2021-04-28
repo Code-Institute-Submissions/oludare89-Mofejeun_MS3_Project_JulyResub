@@ -34,7 +34,7 @@ def home():
 
     recipes = list(mongo.db.recipes.find().skip(page - 1).limit(per_page))
 
-    return render_template("home.html", recipes=recipes)
+    return render_template("home.html", recipes=recipes, page=page)
 
 
 @app.route("/search", methods=["GET", "POST"])
