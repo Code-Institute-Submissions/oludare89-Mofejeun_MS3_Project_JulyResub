@@ -47,6 +47,11 @@
                             Edit Recipe <i class="material-icons right">edit</i>
                         </a>
                     </button>
+                    <button class="btn-large">
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">
+                            Delete Recipe <i class="material-icons right">edit</i>
+                        </a>
+                    </button>
                 </div>
             </div>
         {% endif %}
