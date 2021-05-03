@@ -25,7 +25,7 @@
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="#">Search</a></li>
                     {% if session.user %}  
-                        <li><a href="#">Add Recipe</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                         <li>
                             <a class="dropdown-trigger" href="#" data-target="user-dropdown">
                                 {{ session.user }}
@@ -51,7 +51,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="#">Search</a></li>
             {% if session.user %}
-                <li><a href="#">Add Recipe</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                     <li>
                         <ul class="collapsible">
                             <li>
