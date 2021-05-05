@@ -5,19 +5,22 @@
 
     <div class="row card-panel">
             
-            <div class="row">
-                <div class="col s6">
-                    <img src="{{ recipe.recipe_image }}" alt="{{ recipe.description }}">
+            <div class="row recipe-image-card">
+                <div class="col s6 center-align">
+                    <img class="recipe-image" src="{{ recipe.recipe_image }}" alt="{{ recipe.description }}">
                 </div>
-                <div class="col s6">
+                <div class="col s6 center-align">    
                     <i class="material-icons medium">local_dining</i>
-                    <h6>{{ serves }}</h6>
+                    <h6>{{ recipe.serves }}</h6>
                     <i class="material-icons medium">timer</i>
-                    <h6>{{ prep_time }}</h6>
+                    <h6>{{ recipe.prep_time }}</h6>
                     <i class="material-icons medium">map</i>
-                    <h6>{{ country }}</h6>
-                    <h6 class="description">{{ recipe.description }}</h6>
+                    <h6>{{ recipe.country }}</h6>
                 </div>
+            </div>
+
+            <div class="row">
+                <h6 class="description">{{ recipe.description }}</h6>
             </div>
 
             <div class="row">

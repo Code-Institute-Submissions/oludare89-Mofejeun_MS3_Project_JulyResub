@@ -73,6 +73,22 @@ ul.user-dropdown li > a {
     flex-direction: column;
 }
 
+/* Recipe card */
+
+.recipe-image {
+    height: 50vh;
+    width: 180px;
+    border-radius: 10px;
+    border: 3px solid white;
+    margin: 30px;
+
+}
+
+.recipe-image-card {
+    display: flex;
+    flex-direction: space-around;
+}
+
 /* Flash messages */
 
 .flashes {
