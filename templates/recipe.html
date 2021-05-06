@@ -23,23 +23,27 @@
                 <h6 class="description">{{ recipe.description }}</h6>
             </div>
 
-            <div class="row">
-                <div class="col s12">
-                    <h3>Ingredients</h3>
-                    {% for ingredient in recipe.ingredients %}
-                    <ol>{{ recipe.ingredients }}</ol>
-                    {% endfor %}
+            {% if recipe.ingredients|length > 0 %}
+                <div class="row">
+                    <div class="col s12">
+                        <h3>Ingredients</h3>
+                        {% for ingredient in recipe.ingredients %}
+                        <ol>{{ recipe.ingredients }}</ol>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+            {% endif %}
 
-            <div class="row">
-                <div class="col s12">
-                    <h3>Steps</h3>
-                    {% for steps in recipe.steps %}
-                    <ol>{{ recipe.steps }}</ol>
-                    {% endfor %}
+            {% if recipe.steps|length > 0 %}
+                <div class="row">
+                    <div class="col s12">
+                        <h3>Steps</h3>
+                        {% for steps in recipe.steps %}
+                        <ol>{{ recipe.steps }}</ol>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+            {% endif %}
 
         <!-- edit button -->    
         {% if session.user|lower == recipe.author|lower %}   
