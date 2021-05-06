@@ -26,10 +26,8 @@
             {% if recipe.ingredients|length > 0 %}
                 <div class="row">
                     <div class="col s12">
-                        <h3>Ingredients</h3>
-                        {% for ingredient in recipe.ingredients %}
-                        <ol>{{ recipe.ingredients }}</ol>
-                        {% endfor %}
+                        <h3 class="ingredients-header">Ingredients</h3>
+                        <p class="ingredients">{{ recipe.ingredients }}</p>
                     </div>
                 </div>
             {% endif %}
@@ -37,16 +35,14 @@
             {% if recipe.steps|length > 0 %}
                 <div class="row">
                     <div class="col s12">
-                        <h3>Steps</h3>
-                        {% for steps in recipe.steps %}
-                        <ol>{{ recipe.steps }}</ol>
-                        {% endfor %}
+                        <h3 class="steps-header">Steps</h3>
+                        <p class="steps">{{ recipe.steps }}</p>     
                     </div>
                 </div>
             {% endif %}
 
         <!-- edit button -->    
-        {% if session.user|lower == recipe.author|lower %}   
+        {% if (session.user|lower == recipe.author|lower) or (session.user|lower == "admin") %}   
             <div class="row">
                 <div class="col s12 center-align">
                     <button class="btn-large">
