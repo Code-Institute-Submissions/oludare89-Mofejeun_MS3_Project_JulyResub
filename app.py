@@ -5,6 +5,7 @@ import os
 from flask import (Flask, flash, render_template, redirect,
                     request, session, url_for, abort)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -34,7 +35,8 @@ def home():
 
     recipes = list(mongo.db.recipes.find().skip(page - 1).limit(per_page))
 
-    return render_template("home.html", recipes=recipes, page=page)
+    return render_template("home.html", recipes=recipes,
+                           page=page, per_page=per_page)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -122,7 +124,6 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        print(f"SERVES: {str(request.form.get('serves'))}")
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "description": request.form.get("description"),
@@ -171,7 +172,7 @@ def recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(task_id)})
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("home"))
     
