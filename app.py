@@ -122,12 +122,13 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        print(f"SERVES: {str(request.form.get('serves'))}")
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "description": request.form.get("description"),
             "recipe_image": request.form.get("recipe_image"),
             "prep_time": request.form.get("prep_time"),
-            "serves": request.form.get("serves"),
+            "serves": str(request.form.get("serves")),
             "country": request.form.get("country"),
             "ingredients": request.form.get("ingredients"),
             "steps": request.form.get("steps"),
@@ -148,7 +149,7 @@ def edit_recipe(recipe_id):
             "description": request.form.get("description"),
             "recipe_image": request.form.get("recipe_image"),
             "prep_time": request.form.get("prep_time"),
-            "serves": request.form.get("serves"),
+            "serves": str(request.form.get("serves")),
             "country": request.form.get("country"),
             "ingredients": request.form.get("ingredients"),
             "steps": request.form.get("steps"),
@@ -158,7 +159,7 @@ def edit_recipe(recipe_id):
         flash("Recipe Successfully Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html", recipe=recipe)
+    return render_template("edit_recipe.html", recipe=recipe)
 
 
 @app.route("/recipe/<recipe_id>", methods = ["GET", "POST"])

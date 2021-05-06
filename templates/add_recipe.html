@@ -4,7 +4,7 @@
     <h3 class="center-align">Add Recipe</h3>
 
     <div class="row card-panel">
-        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+        <form class="col s12" enctype="multipart/form-data" method="POST" action="{{ url_for('add_recipe') }}">
             
             <!-- recipe name -->
             <div class="row">
@@ -37,9 +37,9 @@
             <div class="row">
                 <div class="input-field col s8">
                     <p class="range-field">
-                        Serves
                         <input type="range" id="serves" name="serves" min="1" max="6" />
                     </p>
+                    <label for="Serves">Serves</label>
                 </div>
             </div>
             <!-- preparation time -->
