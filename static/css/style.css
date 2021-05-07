@@ -89,6 +89,34 @@ ul.user-dropdown li > a {
     flex-direction: space-around;
 }
 
+/* Recipe */
+
+.steps-header, .ingredients-header {
+    font-size: 24px;
+}
+
+.delete-btn {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.edit-btn {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #ffd9b3;
+}
+
+.edit-btn a {
+    color: #fff;
+}
+
+.delete-btn a {
+    color: #fff;
+}
+
+
+
 /* Flash messages */
 
 .flashes {

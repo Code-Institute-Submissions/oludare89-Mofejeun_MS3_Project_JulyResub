@@ -29,7 +29,7 @@
 
             {% if recipe.ingredients|length > 0 %}
                 <div class="row">
-                    <div class="col s12">
+                    <div class="col s12 center-align">
                         <h3 class="ingredients-header">Ingredients</h3>
                         <p class="ingredients">{{ recipe.ingredients }}</p>
                     </div>
@@ -38,7 +38,7 @@
 
             {% if recipe.steps|length > 0 %}
                 <div class="row">
-                    <div class="col s12">
+                    <div class="col s12 center-align">
                         <h3 class="steps-header">Steps</h3>
                         <p class="steps">{{ recipe.steps }}</p>     
                     </div>
@@ -49,12 +49,12 @@
         {% if (session.user|lower == recipe.author|lower) or (session.user|lower == "admin") %}   
             <div class="row">
                 <div class="col s12 center-align">
-                    <button class="btn-large">
+                    <button class="btn-large edit-btn">
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
                             Edit Recipe <i class="material-icons right">edit</i>
                         </a>
                     </button>
-                    <button class="btn-large">
+                    <button class="btn-large delete-btn">
                         <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">
                             Delete Recipe <i class="material-icons right">edit</i>
                         </a>
