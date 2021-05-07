@@ -81,12 +81,6 @@ ul.user-dropdown li > a {
     border-radius: 10px;
     border: 3px solid white;
     margin: 30px;
-
-}
-
-.recipe-image-card {
-    display: flex;
-    flex-direction: space-around;
 }
 
 /* Recipe */
@@ -115,7 +109,13 @@ ul.user-dropdown li > a {
     color: #fff;
 }
 
+/* Add recipe */
 
+.add-btn {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #ffd9b3;
+}
 
 /* Flash messages */
 

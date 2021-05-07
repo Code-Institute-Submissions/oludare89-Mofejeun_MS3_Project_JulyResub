@@ -197,7 +197,8 @@ The site allows users to upload and edit their recipes. Site users can also sear
 - [HTML](https://user-images.githubusercontent.com/46917417/117382931-7dff0a00-aed7-11eb-9833-56752e4f4c59.png)
 There is a header within the html section within the jinja code.
 
-- [CSS]
+- [CSS](https://user-images.githubusercontent.com/46917417/117435117-664e7280-af25-11eb-9066-a58d6199e9c3.png)
+No issues found.
 
 ### Manual Testing
 - Create a new recipe - successfully executed
