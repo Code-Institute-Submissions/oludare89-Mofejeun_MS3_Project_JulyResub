@@ -200,13 +200,12 @@ There is a header within the html section within the jinja code.
 - [CSS]
 
 ### Manual Testing
-
+- Create a new recipe - successfully executed
+- Edit an existing recipe - successfully executed
+- Delete an existing recipe - successfully executed
 
 ### Known Issues
-
-
-
-
+- Needs pagination functionality to work effectively.
 
 ## Deployment
 
@@ -351,6 +350,8 @@ The site is deployed to Heroku at: https://mofejeun-app.herokuapp.com/
 
 ### Media
 - [Africa travel map, decorative symbol of Africa continent with wild animals silhouettes](https://www.shutterstock.com/image-vector/africa-travel-map-decorative-symbol-continent-644884147) by [baldyrgan](https://www.shutterstock.com/g/baldyrgan)
+- [West Africa Rice Jollof with Boiled Egg and Beef](https://www.shutterstock.com/image-photo/west-africa-rice-jollof-boiled-egg-1282284820) by [Linda Hughes Photography](https://www.shutterstock.com/g/lindahughesphotography)
+- [Street Food Grilled Bananas in Uganda](https://www.shutterstock.com/image-photo/street-food-grilled-bananas-uganda-577629280) by [Nickolas warner](https://www.shutterstock.com/g/Nickolas+warner)
 
 ### Acknowledgements
 - Assistance and guidance from my mentor Dick Vlaanderen

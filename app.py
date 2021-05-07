@@ -25,25 +25,40 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     # pagination
-    per_page = 2
-    page = request.args.get('page')
-
-    if page and page.isdigit():
-        page = int(page)
-    else:
-        page = 1
-
-    recipes = list(mongo.db.recipes.find().skip(page - 1).limit(per_page))
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    per_page = 3
+    offset = page * per_page
+    total = mongo.db.recipes.find().count()
+    recipes = list(mongo.db.recipes.find())
+    paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page, total=total)
 
     return render_template("home.html", recipes=recipes,
-                           page=page, per_page=per_page)
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("home.html", recipes=recipes)
+
+    # pagination
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    per_page = 3
+    offset = page * per_page
+    total = mongo.db.recipes.find().count()
+    recipes = list(mongo.db.recipes.find())
+    paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page, total=total)
+    
+    return render_template("home.html", recipes=recipes,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/register", methods=["GET", "POST"])
