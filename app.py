@@ -3,7 +3,7 @@ Initialisation of flask app and server routes
 """
 import os
 from flask import (Flask, flash, render_template, redirect,
-                    request, session, url_for, abort)
+                        request, session, url_for, abort)
 from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
@@ -54,7 +54,6 @@ def search():
     recipes = list(mongo.db.recipes.find())
     paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page, total=total)
-    
     return render_template("home.html", recipes=recipes,
                            page=page,
                            per_page=per_page,
@@ -78,7 +77,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        #put the new user into 'session' cookie
+        # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!", category="info")
         return redirect(url_for("profile", username=session["user"]))
@@ -95,14 +94,14 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
                         "profile", username=session["user"]))
             else:
-                #invalid password match
+                # invalid password match
                 flash("Incorrect Username and/or Password", category="warning")
                 return redirect(url_for("login"))
 
@@ -121,17 +120,17 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        recipes = list(mongo.db.recipes.find({"author" : username}))
-
-        return render_template("profile.html", username=username, recipes=recipes)
-    
+        recipes = list(mongo.db.recipes.find({"author": username}))
+        return render_template("profile.html", 
+                            username=username, recipes=recipes)
     return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
     # remove user from session cookies
-    flash("User {user} Logged out".format(user=session["user"]), category="info")
+    flash("User {user} Logged out".format(user=session["user"]),
+                                            category="info")
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -157,7 +156,7 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
-@app.route("/edit_recipe/<recipe_id>", methods = ["GET", "POST"])
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
         submit = {
@@ -171,16 +170,15 @@ def edit_recipe(recipe_id):
             "steps": request.form.get("steps"),
             "author": session["user"]
         }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)},submit)
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
 
 
-@app.route("/recipe/<recipe_id>", methods = ["GET", "POST"])
+@app.route("/recipe/<recipe_id>", methods=["GET", "POST"])
 def recipe(recipe_id):
-    
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=recipe)
 
@@ -190,8 +188,6 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("home"))
-    
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
