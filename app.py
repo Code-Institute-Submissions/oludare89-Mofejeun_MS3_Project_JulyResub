@@ -3,7 +3,7 @@ Initialisation of flask app and server routes
 """
 import os
 from flask import (Flask, flash, render_template, redirect,
-                        request, session, url_for, abort)
+                   request, session, url_for, abort)
 from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
@@ -121,8 +121,8 @@ def profile(username):
 
     if session["user"]:
         recipes = list(mongo.db.recipes.find({"author": username}))
-        return render_template("profile.html", 
-                            username=username, recipes=recipes)
+        return render_template("profile.html", username=username,
+                               recipes=recipes)
     return redirect(url_for("login"))
 
 
@@ -130,7 +130,7 @@ def profile(username):
 def logout():
     # remove user from session cookies
     flash("User {user} Logged out".format(user=session["user"]),
-                                            category="info")
+          category="info")
     session.pop("user")
     return redirect(url_for("login"))
 
