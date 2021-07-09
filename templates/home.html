@@ -3,12 +3,14 @@
 
     <div class="row card-panel">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
+            <div class="row center-align">
                 <div class="input-field col s12 m8">
                     <i class="material-icons prefix medium left">search</i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
                     <label for="query">Search Recipes</label>
                 </div>
+            </div>
+            <div class="row center-align"    
                 <div class="col s12 m4">
                     <a href="{{ url_for('home') }}" class="red btn">Reset</a>
                     <button type="submit" class="btn ">
