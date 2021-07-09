@@ -200,10 +200,16 @@ There is a header within the html section within the jinja code.
 - [CSS](https://user-images.githubusercontent.com/46917417/117435117-664e7280-af25-11eb-9066-a58d6199e9c3.png)
 No issues found.
 
+- [Python](https://user-images.githubusercontent.com/46917417/125053656-4a8a5880-e09d-11eb-911f-0277a417414a.png)
+No issues found.
+
 ### Manual Testing
-- Create a new recipe - successfully executed
-- Edit an existing recipe - successfully executed
-- Delete an existing recipe - successfully executed
+- [Attempted to login with the incorrect password](https://user-images.githubusercontent.com/46917417/125058509-401e8d80-e0a2-11eb-88d3-4c63e65d1223.png) - error message successfully shows up.
+- [Attempted to register an account on the website](https://user-images.githubusercontent.com/46917417/125058838-8ffd5480-e0a2-11eb-8af7-395e1bd1ce8f.png) - successfully registered and taken to the profile page.
+- [Tested to see if admin is able to edit or delete recipes not made by the admin](https://user-images.githubusercontent.com/46917417/125059065-d783e080-e0a2-11eb-8091-38009c8ec3cd.png) - option to edit or delete recipes is available as admin.
+- [Tested to see if recipe can be deleted](https://user-images.githubusercontent.com/46917417/125059359-25004d80-e0a3-11eb-950a-21306ef1fe72.png) - successfully executed
+- [Test recipe before editing.](https://user-images.githubusercontent.com/46917417/125059634-71e42400-e0a3-11eb-9d1c-aa1b2bad5459.png) [Tested to see whether i could edit this test recipe](https://user-images.githubusercontent.com/46917417/125060129-f20a8980-e0a3-11eb-8088-346337f04256.png) - successfully executed
+- [Tested to see whether I can add blank recipes to website](https://user-images.githubusercontent.com/46917417/125061692-81646c80-e0a5-11eb-83d9-f8c172bf11e4.png) - not able to us fields are required to be filled. I went through each instance leaving each field empty in turn to see whether I could enter a recipe with even just one blank field and wasn't able to and got the "Please fill in this field message" instead of the recipe being added.
 
 ### Known Issues
 - Needs pagination functionality to work effectively.
