@@ -2,7 +2,7 @@
 
 Mofejeun is a recipe sharing website designed to help users find recipes and share their own with others.
 
-![Multi device mockup](#)
+![Multi device mockup](https://user-images.githubusercontent.com/46917417/125065602-e8842000-e0a9-11eb-9040-de66168f53d7.png)
 
 [See live site.](https://mofejeun-app.herokuapp.com/)
 
@@ -210,6 +210,7 @@ No issues found.
 - [Tested to see if recipe can be deleted](https://user-images.githubusercontent.com/46917417/125059359-25004d80-e0a3-11eb-950a-21306ef1fe72.png) - successfully executed
 - [Test recipe before editing.](https://user-images.githubusercontent.com/46917417/125059634-71e42400-e0a3-11eb-9d1c-aa1b2bad5459.png) [Tested to see whether i could edit this test recipe](https://user-images.githubusercontent.com/46917417/125060129-f20a8980-e0a3-11eb-8088-346337f04256.png) - successfully executed
 - [Tested to see whether I can add blank recipes to website](https://user-images.githubusercontent.com/46917417/125061692-81646c80-e0a5-11eb-83d9-f8c172bf11e4.png) - not able to us fields are required to be filled. I went through each instance leaving each field empty in turn to see whether I could enter a recipe with even just one blank field and wasn't able to and got the "Please fill in this field message" instead of the recipe being added.
+- [Tested to see whether I can log out of an account](https://user-images.githubusercontent.com/46917417/125064786-eb324580-e0a8-11eb-916d-91f62eff7912.png) - sucessfully executed
 
 ### Known Issues
 - Needs pagination functionality to work effectively.
