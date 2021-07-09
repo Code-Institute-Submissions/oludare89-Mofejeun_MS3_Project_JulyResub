@@ -2,7 +2,7 @@
 
 Mofejeun is a recipe sharing website designed to help users find recipes and share their own with others.
 
-![Multi device mockup](https://user-images.githubusercontent.com/46917417/125065602-e8842000-e0a9-11eb-9040-de66168f53d7.png)
+[Multi device mockup](https://user-images.githubusercontent.com/46917417/125065602-e8842000-e0a9-11eb-9040-de66168f53d7.png)
 
 [See live site.](https://mofejeun-app.herokuapp.com/)
 
