@@ -52,22 +52,12 @@
             <li><a href="{{ url_for('search') }}">Search</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                    <li>
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header">
-                                    {{ session.user }}
-                                    <i class="material-icons right">arrow_drop_down</i>
-                                </div>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li><a href="{{ url_for('profile', username=session.user) }}">Profile</a></li>
-                                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+                <li>
+                    <a class="dropdown-trigger" href="#" data-target="user-dropdown">
+                        {{ session.user }}
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
